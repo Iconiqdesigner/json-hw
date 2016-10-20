@@ -20,10 +20,20 @@ with the date the photo was taken. The first console.log should return the follo
 "What a surprise in lyon. 2016-02-23T06:47:30-08:00"=
 */
 
-var itemListArray = flickerObj["items"];
+//var itemListArray = flickerObj["items"];
+var itemListArray = flickerObj.items;
 itemListArray.forEach(function(element) {
-  console.log(element["title"] + " " + element["date_taken"]);
+  //console.log(element["title"] + " " + element["date_taken"]);
+  console.log(element.title + " " + element.date_taken);
 });
+
+console.log("***********************************************************");
+
+
+//For loop for objects
+for (item of flickerObj.items ) {
+  console.log(item.title + " " + item.date_taken);
+}
 
 
 
@@ -34,9 +44,13 @@ itemListArray.forEach(function(element) {
 var links = [];
 itemListArray.forEach(function(element) {
   links.push(element["link"]);
+  //links.push(element.link);
 });
 
 console.log(links);
+
+
+
 
 
 
